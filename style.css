@@ -31,21 +31,32 @@ body{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-img{
+img, svg{
     display: block;
     max-width: 100%;
     height: auto;
 }
 a{
-    outline: none;
+    text-decoration: none;
     color: inherit;
 }
-button{
+h1,h2,p{
+    margin: 0;
+}
+button,a{
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+button, input{
     padding: 0;
     border: none;
     outline: none;
 }
-input[type="radio"]{
+input[type="radio"],
+input[type="checkbox"]{
     display: none;
 }
 .wrapper{
@@ -77,9 +88,42 @@ input[type="radio"]{
 .footer__powered span{
     margin-left: 8px;
 }
-.quiz{
+.intro{
     flex: 1;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+.intro__subtitle{
+    margin-bottom: 32px;
+    font-size: 20px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #007680;
+}
+.intro__title{
+    margin-bottom: 32px;
+    font-family:"kansasnew",sans-serif;
+    font-size: 40px;
+    line-height: 52px;
+    color: #0B474D;
+}
+.intro__description{
+    max-width: 518px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #0B474C;
+}
+.quiz{
+    display: none;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     padding-bottom: 60px;
@@ -97,6 +141,7 @@ input[type="radio"]{
     width: 0;
     height: 100%;
     background-color: #007680;
+    transition: width 0.25s;
 }
 .btn{
     position: relative;
@@ -129,8 +174,13 @@ input[type="radio"]{
     width: 100%;
     text-align: center;
 }
-.quiz__step{
+.quiz-step{
+    display: none;
     width: 100%;
+    max-width: 960px;
+}
+.quiz-step_active{
+    display: block;
 }
 .quiz__count{
     margin-top: 28px;
@@ -193,10 +243,24 @@ input[type="radio"]{
     text-transform: uppercase;
     color: #919899;
 }
+.quiz-variant__check{
+    display: none;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    background-color: #007680;
+    -webkit-border-radius: 4px 0;
+    -moz-border-radius: 4px 0;
+    border-radius: 4px 0;
+}
 .quiz-variant:hover .quiz-variant__label{
     color: #007680;
 }
-input[type="radio"]:checked + .quiz-variant{
+input[type="radio"]:checked + .quiz-variant,
+input[type="checkbox"]:checked + .quiz-variant{
     padding: 26px 32px;
     background-color: rgba(0, 118, 128, 0.1);
     border: 2px solid #007680;
@@ -208,4 +272,189 @@ input[type="radio"]:checked + .quiz-variant .quiz-variant__label{
     -webkit-border-radius: 4px 0;
     -moz-border-radius: 4px 0;
     border-radius: 4px 0;
+}
+input[type="checkbox"]:checked + .quiz-variant .quiz-variant__check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading{
+    display: none;
+    padding: 160px 0;
+    text-align: center;
+}
+.loading__icon{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.loading__title{
+    max-width: 568px;
+    margin-top: 33px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "kansasnew",serif;
+    font-size: 40px;
+    line-height: 52px;
+    color: #0B474C;
+}
+.loading__description{
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #919899;
+}
+.capture{
+    display: none;
+    padding: 160px 0;
+    text-align: center;
+}
+.capture__title{
+    margin-bottom: 28px;
+    font-family: "kansasnew",serif;
+    font-size: 40px;
+    line-height: 52px;
+    color: #0B474C;
+}
+.capture__description{
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #919899;
+}
+.capture__field{
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 8px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #E0E5E5;
+}
+.capture__inp{
+    flex: 1;
+    padding: 0 16px;
+    font-family:"atten-new-bold",sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    color: #919899;
+}
+.result{
+    display: none;
+    padding: 60px 0;
+    text-align: center;
+}
+.result__subtitle{
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #919899;
+}
+.result__title{
+    margin-bottom: 60px;
+    font-family: "kansasnew",serif;
+    font-size: 40px;
+    line-height: 52px;
+    color: #0B474D;
+}
+.result__box{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 12px;
+    border: 1px solid #E0E5E5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-align: left;
+}
+.result__conent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 428px;
+    margin-left: 60px;
+}
+.result__name{
+    margin-bottom: 32px;
+    font-family: "kansasnew",serif;
+    font-size: 28px;
+    line-height: 32px;
+    color: #0B474D;
+}
+.result__rating{
+    margin-bottom: 16px;
+}
+.result__descriptions{
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #0B474D;
+}
+.result__info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    font-family:"atten-new-bold",sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.result__verified{
+    display: flex;
+    align-items: center;
+    color: #0B474D;
+}
+.result__verified span{
+    margin-left: 8px;
+}
+.result__verified-label{
+    margin-left: 12px;
+    color: #919899;
+}
+.result__controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.result__certs{
+    display: flex;
+    align-items: center;
+}
+.result__certs img:not(:first-child){
+    margin-left: 16px;
+}
+
+@media all and (max-width: 767px){
+    .intro,
+    .quiz{
+        padding: 0 15px;
+    }
+    .result__box{
+        flex-direction: column;
+    }
+    .result__media{
+        margin-bottom: 16px;
+    }
+    .result__conent{
+        margin-left: 0;
+    }
+    .result__controls{
+        flex-direction: column;
+    }
+    .result__certs{
+        margin-top: 16px;
+    }
+    .capture__field{
+        padding: 0;
+    }
 }
