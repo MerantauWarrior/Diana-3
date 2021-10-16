@@ -64,6 +64,9 @@ input[type="checkbox"]{
     flex-direction: column;
     min-height: 100vh;
 }
+.wrapper-w-bgi{
+    background: #fff url('BackgroundPattern.png') center bottom no-repeat;
+}
 .header{
     display: flex;
     align-items: center;

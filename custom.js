@@ -6,6 +6,7 @@ $(document).ready(function () {
 
   $('.js-intro').click(function (e) {
     e.preventDefault();
+    $('.wrapper').removeClass('wrapper-w-bgi');
     $('.intro').hide();
     $('.quiz').show();
     $('.progress__bar').css('width', parseFloat(100/totalSteps*curStep) + '%');
@@ -29,6 +30,7 @@ $(document).ready(function () {
     if (curStep === totalSteps){
       $('.quiz-form').css('display', 'none');
       $('.loading').css('display', 'block');
+      $('.wrapper').addClass('wrapper-w-bgi');
       setTimeout(function () {
         $('.loading').css('display', 'none');
         $('.capture').css('display', 'block');
@@ -47,6 +49,7 @@ $(document).ready(function () {
   $('.js-capture').click(function (e) {
     e.preventDefault();
     $('.capture').hide();
+    $('.wrapper').removeClass('wrapper-w-bgi');
     $('.result').show();
   })
 
