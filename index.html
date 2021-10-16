@@ -12,7 +12,7 @@
 
 <div class="wrapper wrapper-w-bgi">
   <header class="header">
-    <a href="#" class="header__back">
+    <a href="#" class="header__back js-back">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20.25 12H3.75" stroke="#919899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M10.5 5.25L3.75 12L10.5 18.75" stroke="#919899" stroke-width="2" stroke-linecap="round"
@@ -81,7 +81,7 @@
       </svg>
     </a>
   </header>
-  <section class="intro">
+  <section class="intro" data-back="2">
     <h2 class="intro__subtitle">Mattress Selector</h2>
     <h1 class="intro__title">Let’s find your perfect mattress</h1>
     <p class="intro__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel nibh vitae
@@ -95,7 +95,7 @@
     </div>
     <form action="" method="get" class="quiz-form">
 
-      <div class="quiz-step quiz-step_active" data-step="1">
+      <div class="quiz-step quiz-step_active" data-step="1"  data-back="3">
         <div class="quiz__count">01 of 06</div>
         <div class="quiz__title">What’s your mattress budget?</div>
         <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -118,7 +118,7 @@
         </div>
       </div>
 
-      <div class="quiz-step" data-step="2">
+      <div class="quiz-step" data-step="2" data-back="4">
         <div class="quiz__count">02 of 06</div>
         <div class="quiz__title">What’s your preferred comfort level?</div>
         <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -141,7 +141,7 @@
         </div>
       </div>
 
-      <div class="quiz-step" data-step="3">
+      <div class="quiz-step" data-step="3" data-back="5">
         <div class="quiz__count">03 of 06</div>
         <div class="quiz__title">Why are you looking for a new mattress?</div>
         <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -199,7 +199,7 @@
         </div>
       </div>
 
-      <div class="quiz-step" data-step="4">
+      <div class="quiz-step" data-step="4" data-back="6">
         <div class="quiz__count">04 of 06</div>
         <div class="quiz__title">What size mattress are you looking for?</div>
         <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -227,7 +227,7 @@
         </div>
       </div>
 
-      <div class="quiz-step" data-step="5">
+      <div class="quiz-step" data-step="5" data-back="7">
         <div class="quiz__count">05 of 06</div>
         <div class="quiz__title">What’s keeping you up at night?</div>
         <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -259,7 +259,7 @@
         </div>
       </div>
 
-      <div class="quiz-step" data-step="6">
+      <div class="quiz-step" data-step="6" data-back="8">
         <div class="quiz__count">06 of 06</div>
         <div class="quiz__title">What’s your sleep style?</div>
         <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
@@ -286,7 +286,7 @@
       <button class="btn" type="submit" disabled>Continue</button>
 
     </form>
-    <div class="loading">
+    <div class="loading" data-back="9">
       <div class="loading__icon">
         <svg version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
              y="0px"
@@ -319,7 +319,7 @@
         points
       </div>
     </div>
-    <form action="" method="get" class="capture">
+    <form action="" method="get" class="capture" data-back="10">
       <div class="capture__title">Ready to view your results?</div>
       <div class="capture__description">Enter your e-mail below, we’ll show your results and send them to you for safe
         keeping.
@@ -329,7 +329,7 @@
         <button class="btn js-capture" type="submit">Submit</button>
       </div>
     </form>
-    <div class="result">
+    <div class="result" data-back="11">
       <div class="result__subtitle">it’s a match!</div>
       <div class="result__title">Your sleep. Our expertise.</div>
       <div class="result__box">

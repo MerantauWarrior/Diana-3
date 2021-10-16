@@ -53,4 +53,8 @@ $(document).ready(function () {
     $('.result').show();
   })
 
+  $('.js-back').click(function (e) {
+    e.preventDefault();
+  })
+
 });
