@@ -86,11 +86,37 @@ $(document).ready(function () {
 
   $('.js-capture').click(function (e) {
     e.preventDefault();
-    curStep = curStep + 1;
-    $('.quiz-step').removeClass('quiz-step_active');
-    $('.quiz-step[data-step="'+curStep+'"]').addClass('quiz-step_active');
-    $('.wrapper').removeClass('wrapper-w-bgi');
-    $('.footer__designed').show();
+    var email = $(this).siblings('input[type="email"]').val().trim();
+    console.log(email)
+    if (email.length > 0){
+
+      const options = {
+        method: 'POST',
+        headers: {Accept: 'text/html', 'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams({
+          data: '{"token": "KnHZJR","properties": {"$email":'+email+'}}'
+        })
+      };
+      console.log(options)
+      fetch('https://a.klaviyo.com/api/identify', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+
+      curStep = curStep + 1;
+      $('.quiz-step').removeClass('quiz-step_active');
+      $('.quiz-step[data-step="'+curStep+'"]').addClass('quiz-step_active');
+      $('.wrapper').removeClass('wrapper-w-bgi');
+      $('.footer__designed').show();
+    }
+  })
+  $('#cEmail').keyup(function () {
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if ($(this).val().length > 0 && filter.test($(this).val().trim())){
+      $('.js-capture').prop('disabled', false);
+    }else {
+      $('.js-capture').prop('disabled', true);
+    }
   })
 
   $('.js-back').click(function (e) {
