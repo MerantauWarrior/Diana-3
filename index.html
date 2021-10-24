@@ -6,7 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
@@ -72,16 +72,11 @@
         </defs>
       </svg>
     </div>
-    <a href="#" class="header__close">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18.75 5.25L5.25 18.75" stroke="#919899" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"/>
-        <path d="M18.75 18.75L5.25 5.25" stroke="#919899" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"/>
-      </svg>
-    </a>
+    <div class="progress">
+      <div class="progress__bar"></div>
+    </div>
   </header>
-  <section class="intro" data-back="2">
+  <section class="intro">
     <h2 class="intro__subtitle">Mattress Selector</h2>
     <h1 class="intro__title">Let’s find your perfect mattress</h1>
     <p class="intro__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel nibh vitae
@@ -89,204 +84,233 @@
       leo egestas sollicitudin. Enim, vehicula etiam gravida suspendisse vestibulum molestie sed.</p>
     <a href="#" class="btn js-intro">Take your 90 second quiz!</a>
   </section>
-  <section class="quiz">
-    <div class="progress">
-      <div class="progress__bar"></div>
+  <form action="" method="get" class="quiz">
+
+    <div class="quiz-step quiz-step_active" data-step="1">
+      <div class="quiz__count">01 of 06</div>
+      <div class="quiz__title">What’s your mattress budget?</div>
+      <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="quiz__variants">
+        <input type="radio" name="q1" id="q1-1" value="500">
+        <label for="q1-1" class="quiz-variant">
+          <span class="quiz-variant__label">GOOD</span>
+          <span>Up to $500</span>
+        </label>
+        <input type="radio" name="q1" id="q1-2" value="1000">
+        <label for="q1-2" class="quiz-variant">
+          <span class="quiz-variant__label">BETTER</span>
+          <span>Up to $1000</span>
+        </label>
+        <input type="radio" name="q1" id="q1-3" value="2000">
+        <label for="q1-3" class="quiz-variant">
+          <span class="quiz-variant__label">BEST</span>
+          <span>Up to $2000</span>
+        </label>
+      </div>
     </div>
-    <form action="" method="get" class="quiz-form">
 
-      <div class="quiz-step quiz-step_active" data-step="1"  data-back="3">
-        <div class="quiz__count">01 of 06</div>
-        <div class="quiz__title">What’s your mattress budget?</div>
-        <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div class="quiz__variants">
-          <input type="radio" name="q1" id="q1-1" value="a1">
-          <label for="q1-1" class="quiz-variant">
-            <span class="quiz-variant__label">GOOD</span>
-            <span>Up to $500</span>
-          </label>
-          <input type="radio" name="q1" id="q1-2" value="a2">
-          <label for="q1-2" class="quiz-variant">
-            <span class="quiz-variant__label">BETTER</span>
-            <span>Up to $1000</span>
-          </label>
-          <input type="radio" name="q1" id="q1-3" value="a3">
-          <label for="q1-3" class="quiz-variant">
-            <span class="quiz-variant__label">BEST</span>
-            <span>Up to $2000</span>
-          </label>
-        </div>
+    <div class="quiz-step" data-step="2">
+      <div class="quiz__count">02 of 06</div>
+      <div class="quiz__title">What’s your preferred comfort level?</div>
+      <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="quiz__variants">
+        <input type="radio" name="q2" id="q2-1" value="Plush">
+        <label for="q2-1" class="quiz-variant">
+          <span class="quiz-variant__label">MORE COMFORT</span>
+          <span>Plush</span>
+        </label>
+        <input type="radio" name="q2" id="q2-2" value="Medium">
+        <label for="q2-2" class="quiz-variant">
+          <span class="quiz-variant__label">IN BETWEEN</span>
+          <span>Medium</span>
+        </label>
+        <input type="radio" name="q2" id="q2-3" value="Firm">
+        <label for="q2-3" class="quiz-variant">
+          <span class="quiz-variant__label">MORE SUPPORT</span>
+          <span>Firm</span>
+        </label>
       </div>
+    </div>
 
-      <div class="quiz-step" data-step="2" data-back="4">
-        <div class="quiz__count">02 of 06</div>
-        <div class="quiz__title">What’s your preferred comfort level?</div>
-        <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div class="quiz__variants">
-          <input type="radio" name="q2" id="q2-1" value="b1">
-          <label for="q2-1" class="quiz-variant">
-            <span class="quiz-variant__label">MORE COMFORT</span>
-            <span>Plush</span>
-          </label>
-          <input type="radio" name="q2" id="q2-2" value="b2">
-          <label for="q2-2" class="quiz-variant">
-            <span class="quiz-variant__label">IN BETWEEN</span>
-            <span>Medium</span>
-          </label>
-          <input type="radio" name="q2" id="q2-3" value="b3">
-          <label for="q2-3" class="quiz-variant">
-            <span class="quiz-variant__label">MORE SUPPORT</span>
-            <span>Firm</span>
-          </label>
-        </div>
+    <div class="quiz-step" data-step="3">
+      <div class="quiz__count">03 of 06</div>
+      <div class="quiz__title">Why are you looking for a new mattress?</div>
+      <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="quiz__variants">
+        <input type="checkbox" name="q3-1" id="q3-1" value="c1">
+        <label for="q3-1" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Replace or upgrade my bed</span>
+        </label>
+        <input type="checkbox" name="q3-2" id="q3-2" value="c2">
+        <label for="q3-2" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Improve my overall sleep</span>
+        </label>
+        <input type="checkbox" name="q3-3" id="q3-3" value="c3">
+        <label for="q3-3" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Help alleviate pain</span>
+        </label>
+        <input type="checkbox" name="q3-4" id="q3-4" value="c4">
+        <label for="q3-4" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Guest bedroom purchase</span>
+        </label>
+        <input type="checkbox" name="q3-5" id="q3-5" value="c5">
+        <label for="q3-5" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Purchasing for a child</span>
+        </label>
       </div>
+    </div>
 
-      <div class="quiz-step" data-step="3" data-back="5">
-        <div class="quiz__count">03 of 06</div>
-        <div class="quiz__title">Why are you looking for a new mattress?</div>
-        <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div class="quiz__variants">
-          <input type="checkbox" name="q3-1" id="q3-1" value="c1">
-          <label for="q3-1" class="quiz-variant">
-            <span class="quiz-variant__check">
-              <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>Replace or upgrade my bed</span>
-          </label>
-          <input type="checkbox" name="q3-2" id="q3-2" value="c2">
-          <label for="q3-2" class="quiz-variant">
-            <span class="quiz-variant__check">
-              <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>Improve my overall sleep</span>
-          </label>
-          <input type="checkbox" name="q3-3" id="q3-3" value="c3">
-          <label for="q3-3" class="quiz-variant">
-            <span class="quiz-variant__check">
-              <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>Help alleviate pain</span>
-          </label>
-          <input type="checkbox" name="q3-4" id="q3-4" value="c4">
-          <label for="q3-4" class="quiz-variant">
-            <span class="quiz-variant__check">
-              <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>Guest bedroom purchase</span>
-          </label>
-          <input type="checkbox" name="q3-5" id="q3-5" value="c5">
-          <label for="q3-5" class="quiz-variant">
-            <span class="quiz-variant__check">
-              <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>Purchasing for a child</span>
-          </label>
-        </div>
+    <div class="quiz-step" data-step="4">
+      <div class="quiz__count">04 of 06</div>
+      <div class="quiz__title">What size mattress are you looking for?</div>
+      <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="quiz__variants">
+        <input type="radio" name="q4" id="q4-1" value="d1">
+        <label for="q4-1" class="quiz-variant">
+          <span>Twin</span>
+        </label>
+        <input type="radio" name="q4" id="q4-2" value="d2">
+        <label for="q4-2" class="quiz-variant">
+          <span>Full</span>
+        </label>
+        <input type="radio" name="q4" id="q4-3" value="d3">
+        <label for="q4-3" class="quiz-variant">
+          <span>Queen</span>
+        </label>
+        <input type="radio" name="q4" id="q4-4" value="d4">
+        <label for="q4-4" class="quiz-variant">
+          <span>King</span>
+        </label>
+        <input type="radio" name="q4" id="q4-5" value="d5">
+        <label for="q4-5" class="quiz-variant">
+          <span>Cal King</span>
+        </label>
       </div>
+    </div>
 
-      <div class="quiz-step" data-step="4" data-back="6">
-        <div class="quiz__count">04 of 06</div>
-        <div class="quiz__title">What size mattress are you looking for?</div>
-        <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div class="quiz__variants">
-          <input type="radio" name="q4" id="q4-1" value="d1">
-          <label for="q4-1" class="quiz-variant">
-            <span>Twin</span>
-          </label>
-          <input type="radio" name="q4" id="q4-2" value="d2">
-          <label for="q4-2" class="quiz-variant">
-            <span>Full</span>
-          </label>
-          <input type="radio" name="q4" id="q4-3" value="d3">
-          <label for="q4-3" class="quiz-variant">
-            <span>Queen</span>
-          </label>
-          <input type="radio" name="q4" id="q4-4" value="d4">
-          <label for="q4-4" class="quiz-variant">
-            <span>King</span>
-          </label>
-          <input type="radio" name="q4" id="q4-5" value="d5">
-          <label for="q4-5" class="quiz-variant">
-            <span>Cal King</span>
-          </label>
-        </div>
+    <div class="quiz-step" data-step="5">
+      <div class="quiz__count">05 of 06</div>
+      <div class="quiz__title">What’s keeping you up at night?</div>
+      <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="quiz__variants">
+        <input type="checkbox" name="q5" id="q5-1" value="e1">
+        <label for="q5-1" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Nothing - I sleep like a baby</span>
+        </label>
+        <input type="checkbox" name="q5" id="q5-2" value="e2">
+        <label for="q5-2" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Snoring</span>
+        </label>
+        <input type="checkbox" name="q5" id="q5-3" value="e3">
+        <label for="q5-3" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>My partner keeps me up</span>
+        </label>
+        <input type="checkbox" name="q5" id="q5-4" value="e4">
+        <label for="q5-4" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Allergies</span>
+        </label>
+        <input type="checkbox" name="q5" id="q5-5" value="e5">
+        <label for="q5-5" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Pain</span>
+        </label>
+        <input type="checkbox" name="q5" id="q5-6" value="e6">
+        <label for="q5-6" class="quiz-variant">
+          <span class="quiz-variant__check">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.125 1.3752L3.875 6.62496L1.25 4.0002" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span>Sleep Apnea</span>
+        </label>
       </div>
+    </div>
 
-      <div class="quiz-step" data-step="5" data-back="7">
-        <div class="quiz__count">05 of 06</div>
-        <div class="quiz__title">What’s keeping you up at night?</div>
-        <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div class="quiz__variants">
-          <input type="radio" name="q5" id="q5-1" value="e1">
-          <label for="q5-1" class="quiz-variant">
-            <span>Nothing - I sleep like a baby</span>
-          </label>
-          <input type="radio" name="q5" id="q5-2" value="e2">
-          <label for="q5-2" class="quiz-variant">
-            <span>Snoring</span>
-          </label>
-          <input type="radio" name="q5" id="q5-3" value="e3">
-          <label for="q5-3" class="quiz-variant">
-            <span>My partner keeps me up</span>
-          </label>
-          <input type="radio" name="q5" id="q5-4" value="e4">
-          <label for="q5-4" class="quiz-variant">
-            <span>Allergies</span>
-          </label>
-          <input type="radio" name="q5" id="q5-5" value="e5">
-          <label for="q5-5" class="quiz-variant">
-            <span>Pain</span>
-          </label>
-          <input type="radio" name="q5" id="q5-6" value="e6">
-          <label for="q5-6" class="quiz-variant">
-            <span>Sleep Apnea</span>
-          </label>
-        </div>
+    <div class="quiz-step" data-step="6">
+      <div class="quiz__count">06 of 06</div>
+      <div class="quiz__title">What’s your sleep style?</div>
+      <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="quiz__variants">
+        <input type="radio" name="q6" id="q6-1" value="f1">
+        <label for="q6-1" class="quiz-variant">
+          <span>Front Sleeper</span>
+        </label>
+        <input type="radio" name="q6" id="q6-2" value="f2">
+        <label for="q6-2" class="quiz-variant">
+          <span>Side Sleeper</span>
+        </label>
+        <input type="radio" name="q6" id="q6-3" value="f3">
+        <label for="q6-3" class="quiz-variant">
+          <span>Back Sleeper</span>
+        </label>
+        <input type="radio" name="q6" id="q6-4" value="f4">
+        <label for="q6-4" class="quiz-variant">
+          <span>A little bit of everything</span>
+        </label>
       </div>
+    </div>
 
-      <div class="quiz-step" data-step="6" data-back="8">
-        <div class="quiz__count">06 of 06</div>
-        <div class="quiz__title">What’s your sleep style?</div>
-        <div class="quiz__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-        <div class="quiz__variants">
-          <input type="radio" name="q6" id="q6-1" value="f1">
-          <label for="q6-1" class="quiz-variant">
-            <span>Front Sleeper</span>
-          </label>
-          <input type="radio" name="q6" id="q6-2" value="f2">
-          <label for="q6-2" class="quiz-variant">
-            <span>Side Sleeper</span>
-          </label>
-          <input type="radio" name="q6" id="q6-3" value="f3">
-          <label for="q6-3" class="quiz-variant">
-            <span>Back Sleeper</span>
-          </label>
-          <input type="radio" name="q6" id="q6-4" value="f4">
-          <label for="q6-4" class="quiz-variant">
-            <span>A little bit of everything</span>
-          </label>
-        </div>
-      </div>
-
-      <button class="btn" type="submit" disabled>Continue</button>
-
-    </form>
-    <div class="loading" data-back="9">
+    <div class="loading">
       <div class="loading__icon">
         <svg version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
              y="0px"
@@ -319,21 +343,23 @@
         points
       </div>
     </div>
-    <form action="" method="get" class="capture" data-back="10">
+
+    <div class="quiz-step capture" data-step="7">
       <div class="capture__title">Ready to view your results?</div>
       <div class="capture__description">Enter your e-mail below, we’ll show your results and send them to you for safe
         keeping.
       </div>
       <div class="capture__field">
-        <input type="email" name="cEmail" class="capture__inp" id="cEmail" required placeholder="E-mail address">
+        <input type="email" name="cEmail" class="capture__inp" id="cEmail" required placeholder="Email address">
         <button class="btn js-capture" type="submit">Submit</button>
       </div>
-    </form>
-    <div class="result" data-back="11">
+    </div>
+
+    <div class="quiz-step result" data-step="8">
       <div class="result__subtitle">it’s a match!</div>
       <div class="result__title">Your sleep. Our expertise.</div>
       <div class="result__box">
-        <div class="result__media"><img src="Awara_Classic_2D-2_model_11651.jpg" alt="text"></div>
+        <div class="result__media"><img src="imgs/Awara_Classic_2D-2_model_11651.jpg" alt="text"></div>
         <div class="result__conent">
           <div class="result__name">Awara Classic</div>
           <div class="result__rating">
@@ -370,15 +396,17 @@
           <div class="result__controls">
             <a href="#" class="btn">Shop Awara Now</a>
             <div class="result__certs">
-              <img src="image3.png" alt="text">
-              <img src="image1.png" alt="text">
-              <img src="image2.png" alt="text">
+              <img src="imgs/image3.png" alt="text">
+              <img src="imgs/image1.png" alt="text">
+              <img src="imgs/image2.png" alt="text">
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+    <button class="btn js-quiz-submit" disabled>Continue</button>
+  </form>
   <footer class="footer">
     <div class="footer__powered">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -394,6 +422,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="custom.js"></script>
+<script src="js/custom.js"></script>
 </body>
 </html>
