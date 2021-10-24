@@ -37,10 +37,11 @@ $(document).ready(function () {
     btnDisabled();
   })
 
-  function resultEnd(title, img, link){
+  function resultEnd(title, img, link, linkText){
     $('.result__name').text(title);
     $('.result__media img').attr('src', img);
     $('.result__controls a').attr('href', link);
+    $('.result__controls a').text( linkText);
   }
 
   $('.js-quiz-submit').click(function () {
@@ -58,22 +59,22 @@ $(document).ready(function () {
       results.material = $('input[name="q2"]:checked').val().toLowerCase();
 
       if (results.price < 2000 && results.material === 'plush'){
-        resultEnd('Dreamcloud Classic', 'imgs/Dreamcloud/classic.jpeg', '#Dreamcloudclassic')
+        resultEnd('Dreamcloud Classic', 'imgs/Dreamcloud/classic.jpeg', '#Dreamcloudclassic', 'Shop Dreamcloud Now')
       }
       if (results.price < 2000 && results.material === 'medium'){
-        resultEnd('Nectar Classic', 'imgs/Nectar/classic.jpeg', '#Nectarclassic')
+        resultEnd('Nectar Classic', 'imgs/Nectar/classic.jpeg', '#Nectarclassic', 'Shop Nectar Now')
       }
       if (results.price < 2000 && results.material === 'firm'){
-        resultEnd('Awara Classic', 'imgs/Awara/classic.jpeg', '#Awaraclassic')
+        resultEnd('Awara Classic', 'imgs/Awara/classic.jpeg', '#Awaraclassic', 'Shop Awara Now')
       }
       if (results.price === 2000 && results.material === 'plush'){
-        resultEnd('Dreamcloud Premier', 'imgs/Dreamcloud/premier.jpeg', '#Dreamcloudpremier')
+        resultEnd('Dreamcloud Premier', 'imgs/Dreamcloud/premier.jpeg', '#Dreamcloudpremier', 'Shop Dreamcloud Now')
       }
       if (results.price === 2000 && results.material === 'medium'){
-        resultEnd('Nectar Premier', 'imgs/Nectar/premier.jpeg', '#Nectarpremier')
+        resultEnd('Nectar Premier', 'imgs/Nectar/premier.jpeg', '#Nectarpremier', 'Shop Nectar Now')
       }
       if (results.price === 2000 && results.material === 'firm'){
-        resultEnd('Awara Premier', 'imgs/Awara/premier.jpeg', '#Awarapremier')
+        resultEnd('Awara Premier', 'imgs/Awara/premier.jpeg', '#Awarapremier', 'Shop Awara Now')
       }
 
     }else{
