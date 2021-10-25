@@ -494,11 +494,21 @@ input[type="checkbox"]:checked + .quiz-variant .quiz-variant__check{
     }
     .quiz__title{
         margin-top: 40px;
-        font-size: 32px;
-        line-height: 40px;
+        /*font-size: 32px;*/
+        /*line-height: 40px;*/
+        font-size: 26px;
+        line-height: 30px;
     }
     .quiz__variants{
-        margin: 60px 0;
+        /*margin: 60px 0;*/
+        margin: 40px 0;
+    }
+    .quiz-variant {
+        margin: 0 10px 15px 10px;
+        padding: 20px 32px;
+    }
+    input[type="radio"]:checked + .quiz-variant, input[type="checkbox"]:checked + .quiz-variant {
+        padding: 19px 32px;
     }
     .quiz-variant:last-child{
         margin-bottom: 0;
