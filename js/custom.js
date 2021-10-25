@@ -93,13 +93,11 @@ $(document).ready(function () {
 
       const options = {
         method: 'POST',
-        headers: {Accept: 'text/html', 'Content-Type': 'application/x-www-form-urlencoded'},
-        body: new URLSearchParams({
-          data: '{"token": "KnHZJR","properties": {"$email":'+email+'}}'
-        })
+        headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
+        body: JSON.stringify({profiles: [{email: email}]})
       };
       console.log(options)
-      fetch('https://a.klaviyo.com/api/identify', options)
+      fetch('https://a.klaviyo.com/api/v2/list/QU6Zzn/subscribe?api_key=pk_1b0ecf96edc63bdef53eec9c0b490ff2e2', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));

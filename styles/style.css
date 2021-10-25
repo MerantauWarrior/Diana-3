@@ -452,6 +452,12 @@ input[type="checkbox"]:checked + .quiz-variant .quiz-variant__check{
     justify-content: space-between;
     width: 100%;
 }
+.result__controls .btn{
+    width: 100%;
+    max-width: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .result__certs{
     display: flex;
     align-items: center;
